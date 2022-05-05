@@ -39,12 +39,12 @@ jobs:
         uses: baptiste0928/cargo-install@v1
         with:
           crate: cargo2junit
-          version: "^"
+          version: "0.1.10"
       - name: Install grcov
         uses: baptiste0928/cargo-install@v1
         with:
           crate: grcov
-          version: "^"
+          version: "0.8.7"
       - name: Generate test result and coverage report
         run: |
           cargo test $CARGO_OPTIONS -- -Z unstable-options --format json | cargo2junit > results.xml;
